@@ -1,0 +1,1020 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Melike & Rohat | Davetiye</title>
+  <meta name="description" content="Melike Polat ve Rohat Özden'in kına ve düğün davetiyesi.">
+  <meta property="og:title" content="Melike & Rohat | Davetiye">
+  <meta property="og:description" content="Bu mutlu günümüzde sizi de aramızda görmekten onur duyarız.">
+  <meta property="og:type" content="website">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #110b08;
+      --panel: #20120d;
+      --panel-2: #2b1912;
+      --paper: #fff2d4;
+      --paper-soft: #fff8e9;
+      --ink: #2b1a12;
+      --cream: #fff6df;
+      --muted: rgba(255, 246, 223, 0.7);
+      --dim: rgba(255, 246, 223, 0.48);
+      --gold: #d7a64a;
+      --gold-2: #f3cf7a;
+      --ruby: #8d1f36;
+      --ruby-dark: #5b101f;
+      --green: #1d6259;
+      --line: rgba(243, 207, 122, 0.2);
+      --shadow: 0 28px 90px rgba(0, 0, 0, 0.42);
+      --radius: 8px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--cream);
+      background:
+        radial-gradient(circle at 50% 0%, rgba(215, 166, 74, 0.18), transparent 28rem),
+        radial-gradient(circle at 12% 30%, rgba(141, 31, 54, 0.22), transparent 20rem),
+        radial-gradient(circle at 88% 70%, rgba(29, 98, 89, 0.16), transparent 24rem),
+        linear-gradient(180deg, #100907 0%, #1a0f0b 48%, #0e0807 100%);
+      letter-spacing: 0;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      opacity: 0.24;
+      background-image:
+        linear-gradient(rgba(255, 246, 223, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 246, 223, 0.035) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: linear-gradient(180deg, #000, transparent 78%);
+    }
+
+    a { color: inherit; }
+    button { font: inherit; }
+
+    .grain {
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      pointer-events: none;
+      opacity: 0.09;
+      background:
+        repeating-radial-gradient(circle at 17% 32%, rgba(255,255,255,.45) 0 1px, transparent 1px 4px),
+        repeating-radial-gradient(circle at 73% 62%, rgba(0,0,0,.4) 0 1px, transparent 1px 5px);
+      mix-blend-mode: overlay;
+    }
+
+    .stage {
+      min-height: 100svh;
+      display: grid;
+      place-items: center;
+      padding: 22px;
+      position: relative;
+      isolation: isolate;
+    }
+
+    .stage::before,
+    .stage::after {
+      content: "";
+      position: absolute;
+      width: min(56vw, 420px);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      filter: blur(26px);
+      opacity: 0.4;
+      z-index: -1;
+    }
+
+    .stage::before {
+      top: 8%;
+      left: -12%;
+      background: radial-gradient(circle, rgba(141, 31, 54, 0.5), transparent 64%);
+    }
+
+    .stage::after {
+      right: -12%;
+      bottom: 4%;
+      background: radial-gradient(circle, rgba(215, 166, 74, 0.42), transparent 62%);
+    }
+
+    .invite-shell {
+      width: min(420px, 100%);
+      min-height: min(780px, calc(100svh - 44px));
+      display: grid;
+      align-content: center;
+      gap: 22px;
+      padding: 26px 18px;
+      border: 1px solid rgba(243, 207, 122, 0.22);
+      border-radius: 18px;
+      background:
+        linear-gradient(180deg, rgba(255, 246, 223, 0.07), rgba(255, 246, 223, 0.015)),
+        rgba(18, 10, 8, 0.82);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .invite-shell::before {
+      content: "";
+      position: absolute;
+      inset: 10px;
+      border: 1px solid rgba(243, 207, 122, 0.16);
+      border-radius: 14px;
+      pointer-events: none;
+    }
+
+    .intro {
+      display: grid;
+      gap: 18px;
+      justify-items: center;
+      text-align: center;
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .is-open .intro {
+      opacity: 0;
+      transform: translateY(-18px) scale(0.98);
+      pointer-events: none;
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+    }
+
+    .eyebrow {
+      margin: 0;
+      color: var(--gold-2);
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .envelope {
+      width: min(320px, 82vw);
+      aspect-ratio: 1.42;
+      position: relative;
+      margin: 28px auto 8px;
+      filter: drop-shadow(0 30px 36px rgba(0, 0, 0, 0.38));
+      transform-style: preserve-3d;
+      animation: float 3.4s ease-in-out infinite;
+    }
+
+    .env-back,
+    .env-front,
+    .env-flap,
+    .env-letter,
+    .env-fold-left,
+    .env-fold-right {
+      position: absolute;
+      inset: 0;
+      border-radius: 8px;
+    }
+
+    .env-back {
+      background: linear-gradient(135deg, #ffe9ae, #b87d2f);
+      border: 1px solid rgba(255, 239, 185, 0.78);
+    }
+
+    .env-letter {
+      inset: 12% 10% 18%;
+      border: 1px solid rgba(75, 45, 22, 0.18);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.6), rgba(255,255,255,0)),
+        var(--paper);
+      transform: translateY(20%);
+      transition: transform 0.8s ease 0.16s;
+    }
+
+    .env-letter::before {
+      content: "R & M";
+      position: absolute;
+      inset: 18px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(141, 31, 54, 0.22);
+      color: rgba(91, 16, 31, 0.64);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 2rem;
+    }
+
+    .env-flap {
+      transform-origin: top;
+      clip-path: polygon(0 0, 100% 0, 50% 62%);
+      background: linear-gradient(180deg, #ffe9a8, #c88a37);
+      border-top: 1px solid rgba(255, 241, 192, 0.7);
+      transition: transform 0.8s ease;
+      z-index: 5;
+    }
+
+    .env-fold-left {
+      clip-path: polygon(0 0, 53% 50%, 0 100%);
+      background: linear-gradient(90deg, #d99b44, #f1c66b);
+      z-index: 3;
+    }
+
+    .env-fold-right {
+      clip-path: polygon(100% 0, 47% 50%, 100% 100%);
+      background: linear-gradient(270deg, #d5973f, #efc466);
+      z-index: 3;
+    }
+
+    .env-front {
+      clip-path: polygon(0 100%, 50% 46%, 100% 100%);
+      background: linear-gradient(180deg, #e9b65c, #b9792f);
+      z-index: 4;
+    }
+
+    .seal {
+      position: absolute;
+      left: 50%;
+      top: 45%;
+      z-index: 8;
+      width: 70px;
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      color: #ffe7ab;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 36% 28%, rgba(255, 255, 255, 0.18), transparent 26%),
+        linear-gradient(145deg, #a82b3f, #5c101d);
+      border: 3px solid rgba(92, 16, 29, 0.58);
+      box-shadow: inset 0 0 0 4px rgba(255, 231, 171, 0.12), 0 12px 22px rgba(49, 8, 15, 0.38);
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 800;
+      transform: translate(-50%, -50%);
+      transition: opacity 0.35s ease, transform 0.55s ease;
+    }
+
+    .is-open .env-flap { transform: rotateX(178deg); }
+    .is-open .env-letter { transform: translateY(-34%); }
+    .is-open .seal {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.6) rotate(-18deg);
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    h1 {
+      margin: 0;
+      font-family: "Brush Script MT", "Segoe Script", "Lucida Handwriting", cursive;
+      font-size: clamp(2.45rem, 12vw, 4.5rem);
+      line-height: 0.98;
+      letter-spacing: 0;
+      text-shadow: 0 18px 34px rgba(0, 0, 0, 0.42);
+      font-weight: 500;
+    }
+
+    .intro-copy {
+      max-width: 310px;
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.65;
+      font-size: 0.98rem;
+    }
+
+    .btn {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 16px;
+      border: 1px solid rgba(243, 207, 122, 0.32);
+      border-radius: var(--radius);
+      color: var(--cream);
+      background:
+        linear-gradient(180deg, rgba(255, 246, 223, 0.12), rgba(255, 246, 223, 0.04)),
+        rgba(27, 15, 11, 0.72);
+      text-decoration: none;
+      font-weight: 880;
+      cursor: pointer;
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.24);
+    }
+
+    .btn.primary {
+      border-color: rgba(243, 207, 122, 0.1);
+      color: #2a160d;
+      background: linear-gradient(135deg, #ffe6a1, #c98a34);
+    }
+
+    .btn.dark {
+      background: linear-gradient(135deg, var(--ruby), var(--ruby-dark));
+      border-color: rgba(255, 246, 223, 0.1);
+    }
+
+    .btn.light {
+      color: var(--ink);
+      background: var(--paper-soft);
+      border-color: rgba(43, 26, 18, 0.12);
+      box-shadow: none;
+    }
+
+    .invitation {
+      display: none;
+      opacity: 0;
+      transform: translateY(18px);
+      animation: reveal 0.8s ease 0.26s forwards;
+    }
+
+    .is-open .invitation {
+      display: block;
+    }
+
+    @keyframes reveal {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .card {
+      color: var(--ink);
+      border-radius: 14px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.52), rgba(255,255,255,0)),
+        var(--paper-soft);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+      overflow: hidden;
+    }
+
+    .card-hero {
+      min-height: 640px;
+      display: grid;
+      align-content: space-between;
+      gap: 18px;
+      padding: 28px 22px;
+      position: relative;
+      isolation: isolate;
+      text-align: center;
+      color: var(--cream);
+      background:
+        radial-gradient(circle at 50% -10%, rgba(243, 207, 122, 0.22), transparent 34%),
+        radial-gradient(circle at 8% 16%, rgba(141, 31, 54, 0.24), transparent 28%),
+        linear-gradient(180deg, #22140d 0%, #120b08 54%, #1a0f0b 100%);
+    }
+
+    .card-hero::before {
+      content: "";
+      position: absolute;
+      inset: 9px;
+      z-index: -1;
+      border: 1px solid rgba(243, 207, 122, 0.28);
+      border-radius: 10px;
+    }
+
+    .card-hero::after {
+      content: "";
+      position: absolute;
+      inset: 18px;
+      z-index: -1;
+      border: 1px solid rgba(243, 207, 122, 0.12);
+      border-radius: 8px;
+      background:
+        linear-gradient(90deg, transparent 0 48%, rgba(243, 207, 122, 0.12) 49% 51%, transparent 52%),
+        radial-gradient(circle at 50% 52%, rgba(243, 207, 122, 0.08), transparent 34%);
+      pointer-events: none;
+    }
+
+    .sparkles {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .sparkles span {
+      position: absolute;
+      width: 5px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: var(--gold-2);
+      box-shadow: 0 0 18px rgba(243, 207, 122, 0.78);
+      opacity: 0.38;
+      animation: glint 3.8s ease-in-out infinite;
+    }
+
+    .sparkles span:nth-child(1) { left: 14%; top: 18%; animation-delay: 0.1s; }
+    .sparkles span:nth-child(2) { right: 16%; top: 28%; animation-delay: 1.2s; }
+    .sparkles span:nth-child(3) { left: 20%; bottom: 24%; animation-delay: 2.1s; }
+    .sparkles span:nth-child(4) { right: 22%; bottom: 18%; animation-delay: 0.7s; }
+
+    @keyframes glint {
+      0%, 100% {
+        transform: scale(0.72);
+        opacity: 0.18;
+      }
+      50% {
+        transform: scale(1.55);
+        opacity: 0.7;
+      }
+    }
+
+    .ornament {
+      width: 112px;
+      height: 22px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .ornament::before,
+    .ornament::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 44%;
+      height: 1px;
+      background: rgba(243, 207, 122, 0.34);
+    }
+
+    .ornament::before { left: 0; }
+    .ornament::after { right: 0; }
+
+    .ornament span {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 10px;
+      aspect-ratio: 1;
+      background: var(--gold);
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    .names {
+      display: grid;
+      gap: 8px;
+    }
+
+    .names small {
+      color: rgba(243, 207, 122, 0.58);
+      font-size: 0.7rem;
+      font-weight: 900;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .names strong {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.25rem, 10.7vw, 4.1rem);
+      line-height: 1.02;
+      color: var(--gold-2);
+      font-weight: 700;
+      text-shadow: 0 10px 34px rgba(215, 166, 74, 0.18);
+    }
+
+    .card-divider {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 10px;
+      margin: 10px 0;
+    }
+
+    .card-divider::before,
+    .card-divider::after {
+      content: "";
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(243, 207, 122, 0.32), transparent);
+    }
+
+    .card-divider span {
+      width: 9px;
+      aspect-ratio: 1;
+      border: 1px solid rgba(243, 207, 122, 0.42);
+      transform: rotate(45deg);
+      background: rgba(215, 166, 74, 0.18);
+    }
+
+    .family-pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      text-align: center;
+    }
+
+    .family-side {
+      display: grid;
+      gap: 5px;
+      min-width: 0;
+    }
+
+    .family-side small {
+      color: rgba(243, 207, 122, 0.48);
+      font-size: 0.58rem;
+      font-weight: 900;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+    .family-side strong {
+      color: rgba(255, 246, 223, 0.84);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(0.84rem, 3.45vw, 1.02rem);
+      line-height: 1.25;
+    }
+
+    .family-side b {
+      color: var(--gold-2);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.02rem, 4.3vw, 1.38rem);
+      line-height: 1;
+      letter-spacing: 0.04em;
+    }
+
+    .hero-message {
+      margin: 0 auto;
+      max-width: 340px;
+      color: rgba(255, 246, 223, 0.72);
+      line-height: 1.65;
+      font-size: 0.95rem;
+    }
+
+    .quote-card {
+      margin: 0;
+      padding: 17px 17px 17px 20px;
+      border-left: 3px solid var(--gold);
+      color: rgba(255, 246, 223, 0.78);
+      background: rgba(255, 246, 223, 0.055);
+      font-family: Georgia, "Times New Roman", serif;
+      font-style: italic;
+      line-height: 1.55;
+      text-align: left;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .date-ribbon {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .date-ribbon a {
+      min-height: 54px;
+      display: grid;
+      align-content: center;
+      gap: 3px;
+      padding: 10px;
+      border: 1px solid rgba(243, 207, 122, 0.18);
+      border-radius: 8px;
+      color: rgba(255, 246, 223, 0.82);
+      background: rgba(255, 246, 223, 0.055);
+      text-decoration: none;
+    }
+
+    .date-ribbon small {
+      color: rgba(243, 207, 122, 0.74);
+      font-size: 0.68rem;
+      font-weight: 900;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .date-ribbon strong {
+      font-size: 0.92rem;
+    }
+
+    .date-ribbon + .quick-actions {
+      margin-top: 10px;
+    }
+
+    .card-program {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .program-mini {
+      min-height: 112px;
+      display: grid;
+      align-content: center;
+      gap: 5px;
+      padding: 10px;
+      border: 1px solid rgba(243, 207, 122, 0.2);
+      border-radius: 8px;
+      background: rgba(255, 246, 223, 0.055);
+      text-align: left;
+    }
+
+    .program-mini small {
+      color: var(--gold-2);
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .program-mini strong {
+      color: var(--cream);
+      font-size: 0.92rem;
+      line-height: 1.25;
+    }
+
+    .program-mini span {
+      color: rgba(255, 246, 223, 0.58);
+      font-size: 0.76rem;
+      line-height: 1.35;
+    }
+
+    .program-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .program-actions .btn {
+      min-height: 34px;
+      padding: 7px 8px;
+      font-size: 0.72rem;
+      box-shadow: none;
+    }
+
+    .map-drawer {
+      border: 1px solid rgba(243, 207, 122, 0.18);
+      border-radius: 8px;
+      background: rgba(255, 246, 223, 0.055);
+      overflow: hidden;
+      text-align: left;
+    }
+
+    .map-drawer summary {
+      min-height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 9px 12px;
+      color: var(--gold-2);
+      cursor: pointer;
+      font-size: 0.82rem;
+      font-weight: 900;
+      list-style: none;
+    }
+
+    .map-drawer summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .map-drawer iframe {
+      width: 100%;
+      height: 180px;
+      display: block;
+      border: 0;
+      border-top: 1px solid rgba(243, 207, 122, 0.14);
+      filter: saturate(0.86) contrast(1.02);
+    }
+
+    .quick-actions,
+    .actions {
+      display: grid;
+      gap: 10px;
+    }
+
+    .quick-actions {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .countdown {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .count-item {
+      min-height: 64px;
+      display: grid;
+      place-items: center;
+      padding: 10px 6px;
+      border: 1px solid rgba(243, 207, 122, 0.18);
+      border-radius: var(--radius);
+      background: rgba(255, 246, 223, 0.07);
+    }
+
+    .count-item strong {
+      color: var(--gold-2);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.45rem;
+      line-height: 1;
+    }
+
+    .count-item span {
+      color: rgba(255, 246, 223, 0.5);
+      font-size: 0.76rem;
+      font-weight: 800;
+    }
+
+    .content { display: none; }
+
+    .section-head {
+      display: grid;
+      gap: 10px;
+      margin-bottom: 18px;
+      text-align: center;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      color: var(--gold-2);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.2rem, 9vw, 4.4rem);
+      line-height: 0.95;
+    }
+
+    .section-head p {
+      max-width: 620px;
+      margin: 0 auto;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+    .info-card {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background:
+        linear-gradient(180deg, rgba(255, 246, 223, 0.08), rgba(255, 246, 223, 0.03)),
+        rgba(32, 18, 13, 0.78);
+      box-shadow: 0 18px 48px rgba(0, 0, 0, 0.18);
+    }
+
+    .info-card.gold {
+      color: var(--ink);
+      background:
+        linear-gradient(145deg, rgba(255,255,255,0.5), rgba(255,255,255,0)),
+        var(--paper-soft);
+    }
+
+    .info-card h3 {
+      margin: 0 0 12px;
+      color: var(--gold-2);
+      font-size: 1.2rem;
+    }
+
+    .info-card.gold h3 {
+      color: var(--ruby-dark);
+    }
+
+    .info-card p,
+    .info-card li {
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .info-card.gold p,
+    .info-card.gold li {
+      color: rgba(43, 26, 18, 0.68);
+    }
+
+    .map-frame {
+      width: 100%;
+      min-height: 220px;
+      display: block;
+      margin: 14px 0 0;
+      border: 1px solid rgba(243, 207, 122, 0.18);
+      border-radius: 8px;
+      filter: saturate(0.85) contrast(1.02);
+      background: rgba(255, 246, 223, 0.08);
+    }
+
+    .detail-list {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .detail-list strong {
+      display: block;
+      color: inherit;
+    }
+
+    .family-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding-top: 12px;
+      margin-top: 12px;
+      border-top: 1px solid rgba(43, 26, 18, 0.12);
+    }
+
+    .family-row span {
+      color: rgba(43, 26, 18, 0.54);
+      font-size: 0.9rem;
+      font-weight: 800;
+    }
+
+    @media (min-width: 760px) {
+      .stage {
+        min-height: 92svh;
+      }
+
+      .invite-shell {
+        min-height: 720px;
+      }
+
+      .card-hero {
+        min-height: 660px;
+      }
+    }
+
+    @media (max-width: 820px) {
+      .stage { padding: 12px; }
+      .invite-shell {
+        width: min(420px, 100%);
+        min-height: calc(100svh - 24px);
+        border-radius: 16px;
+      }
+
+      .two,
+      .three {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 440px) {
+      .invite-shell { padding: 22px 14px; }
+      .card-hero {
+        min-height: 620px;
+        padding: 22px 16px;
+        gap: 13px;
+      }
+      .family-pair { gap: 8px; }
+      .quick-actions {
+        grid-template-columns: 1fr;
+      }
+      .countdown { gap: 6px; }
+      .count-item { min-height: 58px; }
+      .count-item strong { font-size: 1.22rem; }
+      .quote-card { font-size: 0.9rem; }
+      .date-ribbon a { min-height: 50px; }
+      .map-frame { min-height: 190px; }
+      .card-program { grid-template-columns: 1fr; }
+      .program-mini { min-height: auto; }
+      .map-drawer iframe { height: 155px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <main>
+    <section class="stage" id="davetiye">
+      <div class="invite-shell" id="inviteShell">
+        <div class="intro" id="intro">
+          <p class="eyebrow">Özel davetiye</p>
+          <div class="envelope" aria-hidden="true">
+            <div class="env-back"></div>
+            <div class="env-letter"></div>
+            <div class="env-flap"></div>
+            <div class="env-fold-left"></div>
+            <div class="env-fold-right"></div>
+            <div class="env-front"></div>
+            <div class="seal">R&M</div>
+          </div>
+          <h1>Melike<br>Rohat</h1>
+          <p class="intro-copy">Bu davetiye sizin için hazırlandı. Açmak için aşağıdaki mühürlü davet butonuna dokunun.</p>
+          <button class="btn primary" id="openInvite" type="button">Daveti Aç</button>
+        </div>
+
+        <article class="invitation" id="invitation">
+          <div class="card card-hero">
+            <div class="sparkles" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div>
+              <p class="eyebrow">Kına ve düğün davetiyesi</p>
+              <div class="ornament"><span></span></div>
+            </div>
+
+            <div class="names">
+              <small>Bir ömür mutluluğa</small>
+              <strong>Melike<br>&<br>Rohat</strong>
+            </div>
+
+            <div class="card-divider" aria-hidden="true"><span></span></div>
+
+            <div class="family-pair" aria-label="Aile bilgileri">
+              <div class="family-side">
+                <small>Ailesi</small>
+                <strong>Şengül & Çetin</strong>
+                <b>POLAT</b>
+              </div>
+              <div class="family-side">
+                <small>Ailesi</small>
+                <strong>Yıldız & Nevzat</strong>
+                <b>ÖZDEN</b>
+              </div>
+            </div>
+
+            <div class="card-divider" aria-hidden="true"><span></span></div>
+
+            <div>
+              <p class="hero-message">Bu mutlu günümüzde sizleri de aramızda görmekten onur duyarız.</p>
+            </div>
+
+            <blockquote class="quote-card">
+              Bir kalpte başlayan sevda, şimdi sonsuz bir hayata dönüşüyor...
+            </blockquote>
+
+            <div>
+              <div class="card-program" aria-label="Program bilgileri">
+                <div class="program-mini">
+                  <small>Kına</small>
+                  <strong>03.07.2026 · 18:00</strong>
+                  <span>Osmanlı Düğün Salonu<br>Ağrı Merkez</span>
+                  <div class="program-actions">
+                    <a class="btn primary" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Melike%20%26%20Rohat%20K%C4%B1na%20Gecesi&dates=20260703T150000Z/20260703T190000Z&details=Melike%20Polat%20ve%20Rohat%20%C3%96zden%27in%20k%C4%B1na%20gecesi.&location=Osmanl%C4%B1%20D%C3%BC%C4%9F%C3%BCn%20Salonu%2C%20A%C4%9Fr%C4%B1%20Merkez">Takvim</a>
+                    <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=OSMANLI%20D%C3%9C%C4%9E%C3%9CN%20SALONU%20CUMHUR%C4%B0YET%20MAHALLES%C4%B0%2029%20EK%C4%B0M%20CADDES%C4%B0%20CUMHUR%C4%B0YET%20L%C4%B0SES%C4%B0%20KAR%C5%9EISI%20A%C4%9ERI%20MERKEZ">Yol</a>
+                  </div>
+                </div>
+                <div class="program-mini">
+                  <small>Düğün</small>
+                  <strong>04.07.2026 · 10:00</strong>
+                  <span>Diyadin YİBO<br>Diyadin / Ağrı</span>
+                  <div class="program-actions">
+                    <a class="btn primary" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Melike%20%26%20Rohat%20D%C3%BC%C4%9F%C3%BCn&dates=20260704T070000Z/20260704T140000Z&details=Melike%20Polat%20ve%20Rohat%20%C3%96zden%27in%20d%C3%BC%C4%9F%C3%BCn%20t%C3%B6reni.&location=Diyadin%20Y%C4%B0BO%2C%20Diyadin%2FA%C4%9Fr%C4%B1">Takvim</a>
+                    <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Diyadin%20Y%C4%B0BO%20Ketenp%C4%B1nar%20Mahallesi%20Atat%C3%BCrk%20Cd.%2004900%20Diyadin%20A%C4%9Fr%C4%B1">Yol</a>
+                  </div>
+                </div>
+              </div>
+              <details class="map-drawer">
+                <summary>Kına Haritasını Göster</summary>
+                <iframe title="Kına konumu haritası" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=OSMANLI%20D%C3%9C%C4%9E%C3%9CN%20SALONU%20CUMHUR%C4%B0YET%20MAHALLES%C4%B0%2029%20EK%C4%B0M%20CADDES%C4%B0%20CUMHUR%C4%B0YET%20L%C4%B0SES%C4%B0%20KAR%C5%9EISI%20A%C4%9ERI%20MERKEZ&output=embed"></iframe>
+              </details>
+              <details class="map-drawer">
+                <summary>Düğün Haritasını Göster</summary>
+                <iframe title="Düğün konumu haritası" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Diyadin%20Y%C4%B0BO%20Ketenp%C4%B1nar%20Mahallesi%20Atat%C3%BCrk%20Cd.%2004900%20Diyadin%20A%C4%9Fr%C4%B1&output=embed"></iframe>
+              </details>
+              <div class="countdown" aria-live="polite">
+                <div class="count-item"><strong id="days">0</strong><span>gün</span></div>
+                <div class="count-item"><strong id="hours">0</strong><span>saat</span></div>
+                <div class="count-item"><strong id="minutes">0</strong><span>dk</span></div>
+                <div class="count-item"><strong id="seconds">0</strong><span>sn</span></div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    const shell = document.getElementById("inviteShell");
+    const openInvite = document.getElementById("openInvite");
+    const targetDate = new Date("2026-07-04T10:00:00+03:00");
+
+    function openCard() {
+      shell.classList.add("is-open");
+      setTimeout(() => {
+        document.getElementById("invitation").scrollIntoView({ behavior: "smooth", block: "center" });
+      }, 650);
+    }
+
+    function tick() {
+      const diff = Math.max(0, targetDate - new Date());
+      const totalSeconds = Math.floor(diff / 1000);
+      const days = Math.floor(totalSeconds / 86400);
+      const hours = Math.floor((totalSeconds % 86400) / 3600);
+      const minutes = Math.floor((totalSeconds % 3600) / 60);
+      const seconds = totalSeconds % 60;
+      document.getElementById("days").textContent = days;
+      document.getElementById("hours").textContent = hours;
+      document.getElementById("minutes").textContent = minutes;
+      document.getElementById("seconds").textContent = seconds;
+    }
+
+    openInvite.addEventListener("click", openCard);
+    tick();
+    setInterval(tick, 1000);
+  </script>
+</body>
+</html>
